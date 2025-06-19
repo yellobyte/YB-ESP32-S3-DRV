@@ -117,7 +117,7 @@ In such case you can force the ESP32-S3 into upload mode *manually*. Keep the **
 
 ### Flash/RAM usage:
 
-The -N8R2 module on the board should provide enough memory even for demanding projects. Building e.g. software example [Stepper-1](https://github.com/yellobyte/YB-ESP32-S3-DRV/tree/main/examples/PlatformIO/Stepper-1) shows the following Flash/RAM usage:  
+The -N8R2 module on the board should provide enough memory even for demanding projects. Building e.g. software example [Stepper-1](https://github.com/yellobyte/YB-ESP32-S3-DRV/tree/main/examples/ArduinoIDE/Stepper-1) shows the following Flash/RAM usage:  
 ```
 Executing task: C:\Users\tj\.platformio\penv\Scripts\platformio.exe run 
 
