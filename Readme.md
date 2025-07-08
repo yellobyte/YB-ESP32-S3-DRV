@@ -82,7 +82,7 @@ Correct **ArduinoIDE** settings for the **YB-ESP32-S3-DRV** board:
 ![](https://github.com/yellobyte/YB-ESP32-S3-DRV/raw/main/doc/YB-ESP32-S3-DRV_ArduinoIDE_board_selection.jpg)
 
 ### PlatformIO:
-Building with **PlatformIO** is easy as well. Starting with Arduino ESP32 Core v3.2.1 the VSCode/PlatformIO IDE provides the necessary variant file (pins_arduino.h) and board definition file (yb_esp32s3_drv.json).   
+Building with **PlatformIO** is easy as well. Starting with Arduino ESP32 Core v3.3.x the VSCode/PlatformIO IDE provides the necessary variant file (pins_arduino.h) and board definition file (yb_esp32s3_drv.json).   
 
 Just create a new project, give it a name, go to board selection, enter "yb-" and finally choose the YB-ESP32-S3-DRV board from the list that's popping up.
 
