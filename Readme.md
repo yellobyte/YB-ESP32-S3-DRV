@@ -7,7 +7,7 @@ Apart from the Espressif **ESP32-S3** MCU it provides a modern driver IC [Toshib
 
 There are plenty of GPIOs available so you can connect additional hardware to the board, e.g. TFT displays, buttons, switches, sensors, modules that communicate via I2C/SPI, etc. Please have a look at the provided [examples](https://github.com/yellobyte/YB-ESP32-S3-DRV/tree/main/examples) for PlatformIO resp. ArduinoIDE. 
 
-The densly populated YB-ESP32-S3-DRV board is still highly [breadboard compatible](https://github.com/yellobyte/YB-ESP32-S3-DRV/raw/main/doc/YB-ESP32-S3-DRV_on_breadboard.jpg) for it leaves one row of accessible breadboard contacts on either side of the board. All I/O ports (GPIOx) are clearly labeled on both sides of the board. 
+The densly populated 4-layer YB-ESP32-S3-DRV board is still highly [breadboard compatible](https://github.com/yellobyte/YB-ESP32-S3-DRV/raw/main/doc/YB-ESP32-S3-DRV_on_breadboard.jpg) for it leaves one row of accessible breadboard contacts on either side of the board. All I/O ports (GPIOx) are clearly labeled on both sides of the board. 
 
 ### Driving inductive loads
 
