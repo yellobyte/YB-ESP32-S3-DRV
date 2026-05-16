@@ -153,9 +153,15 @@ Flash: [=         ]   9.2% (used 306876 bytes from 3342336 bytes)
 
 ### Integrating this board into your own PCB design projects:
 
-Its easy. Folder [doc](https://github.com/yellobyte/YB-ESP32-S3-DRV/tree/main/doc) provides the necessary Eagle library file **_yb-esp32-S3-drv.lbr_** containing the boards symbol and footprint. Most other PCB design software (e.g. KiCad) are able to import and use Eagle library files. 
+It's easy. Folder [doc](https://github.com/yellobyte/YB-ESP32-S3-DRV/tree/main/doc) provides the necessary Eagle library file **_yb-esp32-S3-drv.lbr_** containing the boards symbol and footprint. Most other PCB design software (e.g. KiCad) are able to import and use Eagle library files. 
 
 <p align="center"><img src="https://github.com/yellobyte/YB-ESP32-S3-DRV/raw/main/doc/Eagle_project_with_yb-esp32-s3-drv.jpg" height="250"/>&nbsp;<img src="https://github.com/yellobyte/YB-ESP32-S3-DRV/raw/main/doc/Eagle_project_with_yb-esp32-s3-drv2.jpg" height="250"/></p>
+
+### Integrating this board into your Fritzing projects:
+
+It's easy. The YB-ESP32-S3-DRV board is available as custom Fritzing part (*.fzpz file) [here](https://github.com/yellobyte/YB-ESP32-S3-DRV/tree/main/examples/Fritzing). Just import the provided part file into your Fritzing application and off you go. Example:
+
+![](https://github.com/yellobyte/YB-ESP32-S3-DRV/raw/main/examples/Fritzing/YB-ESP32-S3-DRV-Fritzing-Test-Breadboard.jpg)
 
 <!--## Final Remark:  -->
 
