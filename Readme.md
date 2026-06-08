@@ -151,19 +151,62 @@ RAM:   [=         ]   6.1% (used 20016 bytes from 327680 bytes)
 Flash: [=         ]   9.2% (used 306876 bytes from 3342336 bytes)
 ```
 
-### Integrating this board into your own PCB design projects:
+## Integrating this board into your own PCB design projects:
 
 It's easy. Folder [doc](https://github.com/yellobyte/YB-ESP32-S3-DRV/tree/main/doc) provides the necessary Eagle library file **_yb-esp32-S3-drv.lbr_** containing the boards symbol and footprint. Most other PCB design software (e.g. KiCad) are able to import and use Eagle library files.
 
 <p align="center"><img src="https://github.com/yellobyte/YB-ESP32-S3-DRV/raw/main/doc/Eagle_project_with_yb-esp32-s3-drv.jpg" height="250"/>&nbsp;<img src="https://github.com/yellobyte/YB-ESP32-S3-DRV/raw/main/doc/Eagle_project_with_yb-esp32-s3-drv2.jpg" height="250"/></p>
 
-### Integrating this board into your Fritzing projects:
+## Integrating this board into your Fritzing projects:
 
 It's easy. The YB-ESP32-S3-DRV board is available as custom Fritzing part (*.fzpz file) [here](https://github.com/yellobyte/YB-ESP32-S3-DRV/tree/main/examples/Fritzing). Just import the provided part file into your Fritzing application and off you go. Examples:
 
 ![](https://github.com/yellobyte/YB-ESP32-S3-DRV/raw/main/examples/Fritzing/YB-ESP32-S3-DRV-Fritzing-Test-Breadboard.jpg)
 
 ![](https://github.com/yellobyte/YB-ESP32-S3-DRV/raw/main/examples/Fritzing/YB-ESP32-S3-DRV-Fritzing-24BYJ-48(5V)-Breadboard.jpg)
+
+## Running MicroPython on the board:
+
+Of course you can install MicroPython onto the YB-ESP32-S3-DRV board and use it's WiFi, SPI, I2C, ADC, GPIO and other features via python scripts.  
+ 
+**Step 1)** Load MicroPython onto the board. Go to https://micropython.org/download/ESP32_GENERIC_S3/ and download the newest *.bin firmware release. Here you will find detailed installation instructions as well.
+
+**Step 2)** Erase the entire flash on the board with 
+```
+esptool.py erase_flash
+```
+If esptool.py can't determine which port your board is connected to, try
+```
+esptool.py --port PORTNAME erase_flash
+```
+**Step 3)** Flash the previously downloaded firmware to the board, e.g.
+```
+esptool.py --port COM4 --baud 460800 write_flash 0 ESP32_GENERIC_S3-20260406-v1.28.0.bin
+```
+**Step 4)** Reboot the board by shortly pressing the 'R' button. Then connect your serial monitor to the correct port (here COM4) and press ENTER. If flashing was successful you will be greeted with
+```
+01:57:53.819 > Build:Mar 27 2021
+01:57:53.819 > rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+01:57:53.825 > SPIWP:0xee
+01:57:53.825 > mode:DIO, clock div:1
+01:57:53.825 > load:0x3fce2820,len:0xeac
+01:57:53.830 > load:0x403c8700,len:0xc28
+01:57:53.830 > load:0x403cb700,len:0x2ff8
+01:57:53.830 > entry 0x403c88ac
+01:57:54.370 > MicroPython v1.28.0 on 2026-04-06; Generic ESP32S3 module with ESP32S3
+01:57:54.375 > Type "help()" for more information.
+01:57:54.375 > >>> 
+```
+which confirms that MicroPython is now up and running on your board. Just enter *help()* and MicroPython will present some help info.
+
+**Example: Switching the onboard status LED (GPIO47) on/off:**
+```
+>>> import machine <Enter>
+>>> from machine import Pin <Enter>
+>>> p0 = Pin(47, Pin.OUT) <Enter>
+>>> p0.on() <Enter>
+>>> p0.off() <Enter>
+```
 <!--## Final Remark:  -->
 
 ### General notes:
